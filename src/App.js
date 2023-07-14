@@ -5,6 +5,9 @@ import { DataContext } from './context/DataContext'
 import { SearchContext } from './context/SearchContext'
 import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom'
 import HomePage from './components/HomePage.js'
+import ArtistView from './components/ArtistView'
+import AlbumView from './components/AlbumView'
+import NavBar from './components/NavBar'
 
 const App = () => {
   let [search, setSearch] = useState('')
@@ -40,6 +43,8 @@ console.log('DATA FROM API!!! app.js', data)
             <Router>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/artist/:id" element={<ArtistView />} />
+                <Route path="/album/:id" element={<AlbumView />} />
               </Routes>
             </Router>
             
